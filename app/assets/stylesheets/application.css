@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    font-family: sans-serif;
+}
+
+p {
+    display:inline;
+    margin-right: 1rem;
+}
+
+.wrapper {
+    width:50rem;
+}
+
+.variables {
+    position:relative;
+    float:left;
+}
+
+.example {
+    position:relative;
+    float:right;
+    margin-top:15rem;
+    font-size:3rem;
+    width:25rem;
+}
+
+#text-1 {
+    position:absolute;
+    bottom:-9.5rem;
+    width:55rem;
+}
+#text-2 {
+    position:absolute;
+    width:55rem;
+}
+#text-3 {
+    position:absolute;
+    width:55rem;
+}
