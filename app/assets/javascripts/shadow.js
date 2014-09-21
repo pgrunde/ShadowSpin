@@ -77,13 +77,6 @@ $(document).ready(function(){
       ", 1)")
   }
 
-//  function color2Shadows(color, DOMobj){
-//    DOMobj.css("textShadow", color.x.toString() +"px "+ color.y.toString() +"px " + blur.toString() + "px rgba(255, 15, 174, 1)")
-//  }
-//  function color3Shadows(color, DOMobj){
-//    DOMobj.css("textShadow", color.x.toString() +"px "+ color.y.toString() +"px " + blur.toString() + "px rgba(255, 251, 3, 1)")
-//  }
-
   function rotate(){
     updateValues();
     colorShadows(color1,color1Object);
@@ -98,19 +91,11 @@ $(document).ready(function(){
     $("#text-3").empty().append(text)
   });
 
+  $("#reverse").on("click", function(){
+    speed = parseFloat($("#speed").val());
+    $("#speed").val(speed * -1)
+  });
+
   init();
-
-//  $(document).on("mouseover", ".magic", function(){
-//    init();
-//  });
-
-//  $(document).on("mouseleave", ".magic", function(){
-//    clearInterval(interval);
-//    blueObject.css("textShadow","none");
-//    redObject.css("textShadow","none");
-//    yellowObject.css("textShadow","none");
-//    Dang = Dang * -1
-//  });
-
 
 });
