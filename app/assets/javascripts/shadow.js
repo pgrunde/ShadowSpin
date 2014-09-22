@@ -23,6 +23,11 @@ $(document).ready(function(){
     b:$("#color-3-b").val(),
     angle: 3*Math.PI/2
   };
+  var bgColor = {
+    r:$("#background-r").val(),
+    g:$("#background-g").val(),
+    b:$("#background-b").val()
+  };
 
   var hyp = $("#hyp").val();
   var Dang = parseFloat($("#speed").val());
@@ -48,6 +53,9 @@ $(document).ready(function(){
     hyp = $("#hyp").val();
     Dang = parseFloat($("#speed").val());
     blur = $("#blur").val();
+    bgColor.r = $("#background-r").val();
+    bgColor.g = $("#background-g").val();
+    bgColor.b = $("#background-b").val();
   }
 
   function setColorVals(color, num){
@@ -82,6 +90,7 @@ $(document).ready(function(){
   function rotate(){
     updateValues();
     colorShadows(color1, color2, color3, colorObject);
+    $("body").css("background-color", "#"+bgColor.r +bgColor.b + bgColor.g)
   }
 
   $("#text").on("keyup", function(){
