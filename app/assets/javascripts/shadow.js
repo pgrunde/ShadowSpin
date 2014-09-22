@@ -27,9 +27,7 @@ $(document).ready(function(){
   var hyp = $("#hyp").val();
   var Dang = parseFloat($("#speed").val());
   var blur = $("#blur").val();
-  var color1Object = $('#text-1');
-  var color2Object = $('#text-2');
-  var color3Object = $('#text-3');
+  var colorObject = $('#text-1');
   var interval;
 
   function updateValues(){
@@ -64,36 +62,40 @@ $(document).ready(function(){
     color.angle += Dang;
     color.x = Number(xOut.toFixed(2));
     color.y = Number(yOut.toFixed(2));
-    console.log(Dang)
   }
 
-  function colorShadows(color, DOMobj){
-    DOMobj.css("textShadow", color.x.toString() +
-      "px "+ color.y.toString() +
+  function colorShadows(color1, color2, color3, DOMobj){
+    DOMobj.css("textShadow", color1.x.toString() +
+      "px "+ color1.y.toString() +
       "px " + blur.toString() +
-      "px rgba(" + color.r.toString() +
-      ", "+ color.g.toString() +
-      ", "+ color.b.toString() +
-      ", 1)")
+      "px #"+ color1.r + color1.g + color1.b +
+      ", " + color2.x.toString() +
+      "px "+ color2.y.toString() +
+      "px " + blur.toString() +
+      "px #"+ color2.r + color2.g + color2.b +
+      ", " + color3.x.toString() +
+      "px "+ color3.y.toString() +
+      "px " + blur.toString() +
+      "px #"+ color3.r + color3.g + color3.b)
   }
 
   function rotate(){
     updateValues();
-    colorShadows(color1,color1Object);
-    colorShadows(color2,color2Object);
-    colorShadows(color3,color3Object);
+    colorShadows(color1, color2, color3, colorObject);
   }
 
   $("#text").on("keyup", function(){
     text = $("#text").val();
     $("#text-1").empty().append(text);
-    $("#text-2").empty().append(text);
-    $("#text-3").empty().append(text)
   });
 
   $("#reverse").on("click", function(){
     speed = parseFloat($("#speed").val());
     $("#speed").val(speed * -1)
+  });
+
+  $("#transparent").click(function(){
+    $("#text-1").toggleClass("invis")
   });
 
   init();

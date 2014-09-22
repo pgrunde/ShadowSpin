@@ -42,18 +42,9 @@ p {
 }
 
 #text-1 {
-    position:absolute;
-    bottom:-15.8rem;
     width:55rem;
     text-overflow: clip;
 }
-#text-2 {
-    position:absolute;
-    width:55rem;
-    text-overflow: clip;
-}
-#text-3 {
-    position:absolute;
-    width:55rem;
-    text-overflow: clip;
+.invis {
+    color:transparent;
 }
